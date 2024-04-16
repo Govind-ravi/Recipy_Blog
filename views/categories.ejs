@@ -1,0 +1,45 @@
+<div class="p-2 m-4 rounded ">
+    <% if(typeof categories !== 'undefined' && categories.length > 0 ){ %>
+        <h1 class="font-bold text-xl mb-3">Explore Categories</h1>
+
+    <div class="grid grid-cols-5 gap-5 ">
+            <% categories.forEach(function(category, index){ %>
+                <a href="/categories/<%- category.name %>" class="text-center hover:scale-105 transition-all">
+                    <div class="flex items-center justify-center">
+                        <img class="h-28 w-52 object-cover overflow-hidden rounded" src="/img/<%- category.image %>"
+                            alt="<%- category.name %>">
+                    </div>
+                    <div>
+                        <%- category.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+    </div>
+
+   
+
+    <% if(typeof categoriesById !== 'undefined' && categoriesById.length > 0 ){ %>
+        <h1 class="font-bold text-xl mb-3 mx-4"><%= categoryId %></h1>
+
+
+        <div class="grid grid-cols-5 gap-5 m-2 ">
+            <% categoriesById.forEach(function(category, index){ %>
+                <a href="/recipe/<%- category._id %>" class="text-center hover:scale-105 transition-all">
+                    <div class="flex items-center justify-center">
+                        <img class="h-28 w-52 object-cover overflow-hidden rounded" src="/uploads/<%- category.image %>"
+                            alt="<%- category.name %>">
+                    </div>
+                    <div>
+                        <%- category.name %>
+                    </div> 
+                </a>
+                <% }) %>
+                    <% } %>
+
+    </div>
+
+
+
+</div>

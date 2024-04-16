@@ -1,0 +1,127 @@
+<div class="main">
+    <div class="w-full lg:flex flex-row-reverse items-center justify-center p-4">
+        <img class="md:w-2/5 w-[200px] m-auto" src="/img/hero-image.png" alt="">
+        <div class="p-4 text-center lg:text-start">
+            <h1 class="font-bold text-xl lg:text-5xl">Huge selection of delicios recipe ideas</h1>
+            <p class="text-slate-800 my-4 text-sm lg:text-base">
+                Explore our huge selection of delicious recipe ideas including; easy desserts, delicious vegan and
+                vegetarian dinner ideas, gorgeous pasta recipes, quick bakes, family-friendly meals and gluten-free
+                recipes.
+            </p>
+            <div class="gap-2 flex items-center justify-center lg:justify-start text-[14px] md:text-[16px]">
+                <a href="/explore-latest" class="py-2 px-5 bg-slate-900 rounded text-white hover:bg-slate-800">Explore Latest</a>
+                <a href="/explore-random" class="py-2 px-5 border-2 rounded border-slate-900 hover:bg-slate-100">Show Random</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="m-auto mx-4 mb-10">
+    <h1 class="font-bold text-xl mb-3">Categories</h1>
+
+    <div class="w-auto p-1 flex h-40 overflow-x-scroll overflow-auto gap-5 ">
+        <% if(categories !='' ){ %>
+            <% categories.forEach(function(category, index){ %>
+                <a href="/categories/<%- category.name %>" class="h-20 text-center hover:scale-105 transition-all shadow-xl">
+                    <div class="flex items-center justify-center">
+                        <img class="h-20 w-60 object-cover  rounded" src="/img/<%- category.image %>"
+                            alt="<%- category.name %>">
+                    </div>
+                    <div class="w-48">
+                        <%- category.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+                        <a href="/categories" class="h-20 text-center hover:scale-105 transition-all shadow-xl">
+                            <div class="flex items-center justify-center">
+                                <img class="h-20 w-60  object-cover overflow-hidden rounded" src="/img/view-all.jpg"
+                                    alt="American Food">
+                            </div>
+                            <div class="w-48">
+                                View All
+                            </div>
+                        </a>
+    </div>
+</div>
+
+<section class="m-auto mx-4 mb-10">
+    <div class="flex justify-between items-center  ">
+        <h1 class="font-bold text-xl mb-3">Latest Recipes</h1>
+        <a href="/explore-latest" class="text-xs text-blue-900 underline">View More</a>
+    </div>
+    <div class="latest w-auto p-2 flex h-80 overflow-x-scroll overflow-auto gap-5">
+
+        <% if(food !='' ){ %>
+            <% food.latest.forEach(function(recipe, index){ %>
+                <a href="/recipe/<%= recipe._id %>" class="h-60 text-center hover:scale-105 transition-all shadow-xl">
+                    <div class="flex items-center justify-center">
+                        <img class="h-60 w-60 object-cover rounded" src="/uploads/<%- recipe.image %>"
+                            alt="<%- recipe.name %>">
+                    </div>
+                    <div class="w-48">
+                        <%- recipe.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+
+    </div>
+</section>
+
+<section class="m-auto mx-4 mb-10">
+    <div class="flex justify-between items-center ">
+        <h1 class="font-bold text-xl mb-3">Indian</h1>
+    </div>
+    <div class="w-auto p-2 flex h-80 overflow-x-scroll overflow-auto gap-5">
+
+        <% if(food !='' ){ %>
+            <% food.indian.forEach(function(recipe, index){ %>
+                <a href="/recipe/<%= recipe._id %>" class="h-60 text-center hover:scale-105 transition-all shadow-xl">
+                    <div class="flex items-center justify-center">
+                        <img class="h-60 w-60 object-cover overflow-hidden rounded" src="/uploads/<%- recipe.image %>"
+                            alt="<%- recipe.name %>">
+                    </div>
+                    <div class="w-48">
+                        <%- recipe.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+    </div>
+</section>
+
+<section class="m-auto mx-4 mb-10">
+    <div class="flex justify-between items-center ">
+        <h1 class="font-bold text-xl mb-3">American</h1>
+    </div>
+    <div class="w-auto p-2 flex h-80 overflow-x-scroll overflow-auto gap-5">
+
+        <% if(food !='' ){ %>
+
+            <% food.american.forEach(function(recipe, index){ %>
+                <a href="/recipe/<%= recipe._id %>" class="h-60 text-center hover:scale-105 transition-all shadow-xl">
+                    <div class="flex items-center justify-center">
+                        <img class="h-60 w-60 object-cover overflow-hidden rounded" src="/uploads/<%- recipe.image %>"
+                            alt="<%- recipe.name %>">
+                    </div>
+                    <div class="w-48">
+                        <%- recipe.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+    </div>
+</section>
+
+
+<section class="m-4 w-full p-4 flex flex-col items-center text-center">
+    <img src="/img/publish-recipe.png" class="md:w-4/5 w-[200px] m-auto" alt="">
+    <h1 class="font-bold text-xl lg:text-4xl mb-3">Publish your recipe for FREE today</h1>
+    <p class="text-slate-800">Publis your recipe in front of thousands of people</p>
+    <a href="/submit-recipe" class="m-4 py-2 px-5 bg-slate-900 rounded text-white hover:bg-slate-800">Submit Recipe</a>
+</section>

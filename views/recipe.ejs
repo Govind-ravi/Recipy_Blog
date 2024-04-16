@@ -1,0 +1,27 @@
+<% if(recipe !=null){ %>
+
+    <div class="m-2 p-2 lg:max-h-[70vh] flex flex-col lg:flex-row rounded shadow-md bg-gray-100">
+        <img class="w-2/3  lg:w-1/3 lg:h-600px object-contain mx-2 rounded" src="/uploads/<%- recipe.image %>" alt="">
+        <div class="info w-full p-4 lg:overflow-y-scroll lg:flex-grow">
+            <h1 class="font-bold text-3xl my-3"><%- recipe.name %></h1>
+            <div class=" lg:w-[100%]">
+                <h1 class="font-bold text-xl my-3">Instructions</h1>
+                <% recipe.discription.forEach(function(instruction, index){ %>
+                    <li class="list-none">
+                        <%= instruction %>
+                    </li>
+                    <% } ) %>
+            </div>
+            <div class="lg:w-4/5">
+                <h1 class="font-bold text-xl my-3">Ingredients</h1>
+                <% recipe.ingredients.forEach(function(ingredient, index){ %>
+                    <li class="list-none p-1">
+                        <%= ingredient %>
+                    </li>
+                    <hr>
+                    <% } ) %>
+            </div>
+        </div>
+
+    </div>
+    <% } %>

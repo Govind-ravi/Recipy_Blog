@@ -1,0 +1,22 @@
+<section class="m-auto mx-4 mb-10">
+    <div class="flex justify-between items-center ">
+        <h1 class="font-bold text-xl mb-3">Explore Latest</h1>
+    </div>
+    <div class="grid xs:grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-14">
+
+        <% if(recipe !='' ){ %>
+            <% recipe.forEach(function(recipe, index){ %>
+                <a href="/recipe/<%= recipe._id %>" class="p-1 h-60 text-center hover:scale-105 transition-all">
+                    <div class="flex items-center justify-center">
+                        <img class="h-60 w-52 object-cover overflow-hidden rounded" src="/uploads/<%- recipe.image %>"
+                            alt="<%- recipe.name %>">
+                    </div>
+                    <div class="w-48 m-auto">
+                        <%- recipe.name %>
+                    </div>
+                </a>
+                <% }) %>
+                    <% } %>
+
+    </div>
+</section>

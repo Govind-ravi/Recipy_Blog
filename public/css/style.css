@@ -1,0 +1,38 @@
+*{
+    font-family: sans-serif;
+  }
+body{
+    background-image: url("/img/i-like-food.svg");
+    background-color: rgba(115, 115, 115, 0.2);
+}
+  .info, body::-webkit-scrollbar {
+  /* width: 12px;               width of the entire scrollbar */
+}
+
+.info, body::-webkit-scrollbar-track {
+  background: rgb(231, 230, 230);        /* color of the tracking area */
+}
+
+.info::-webkit-scrollbar-thumb {
+  background-color: gray;    /* color of the scroll thumb */
+  border-radius: 10px;       /* roundness of the scroll thumb */
+  border: 1px solid gray;  /* creates padding around scroll thumb */
+} 
+::-webkit-scrollbar{
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .info::-webkit-scrollbar {
+    width: 100%;               /* width of the entire scrollbar */
+  }
+  
+  .info::-webkit-scrollbar-track {
+    background: none;        /* color of the tracking area */
+  }
+}
+/* sm: 640px
+md: 768px
+lg: 1024px
+xl: 1280px
+2xl: 1536px */

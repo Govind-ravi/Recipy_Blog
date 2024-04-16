@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= typeof title !='undefined' ? title: 'Recipe Blog - Made with Love' %>
+    </title>
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="h-full w-full">
+    <div class="relative container w-full lg:w-5/6 lg:m-auto lg:shadow-2xl p-2 lg:my-2 lg:rounded bg-white m-auto min-h-screen">
+        <nav class="flex gap-2 my-3 items-center justify-between lg:justify-between p-2 w-full">
+            <a href="/"><img class="w-72 ov" src="/img/logo.svg" alt=""></a>
+            <div>
+            <ul class="menu hidden lg:flex  gap-2">
+                <a href="/" class="py-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                    <li>Home</li>
+                </a>
+                <a href="/about" class="py-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                    <li>About</li>
+                </a>
+                <a href="/submit-recipe"
+                    class="py-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                    <li> Submit</li>
+                </a>
+                <div>
+                    <form action="/search" class="flex" method="POST">
+                        <input  type="search" name="searchTerm"
+                            class="form-control mt-2 focus:outline-none bg-[url('/img/searchlogo.svg')] bg-no-repeat pl-6 bg-[length:20px]"
+                            placeholder="Search..." aria-label="Search">
+                    </form>
+                </div>
+            </ul>
+            <div class="transition delay-1000 ease-in-out">
+                <ul class="w-auto p-10 m-1 rounded-lg z-10 text-white bg-slate-800 sidebar  flex flex-col gap-10 fixed top-6 right-[-110%] h-auto ">
+                    <div class="flex mt-1  justify-between items-center"><a href="/" class="w-28 py-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                            <li>Home</li>
+                        </a>
+                        <img src="/img/close.svg" id="close" alt="">
+                    </div>
+                    <a href="/about" class="w-28 p-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                        <li>About</li>
+                    </a>
+                    <a href="/submit-recipe" class="w-28 p-2 px-4 rounded hover:bg-slate-800 hover:text-white transition-colors">
+                        <li> Submit</li>
+                    </a>
+
+                </ul></div>
+            </div>
+            <img id="icon" src="/img/menu.svg" class="lg:hidden" alt="">
+        </nav>
+        <form action="/search" class="m-4 p-2 w-full lg:hidden" method="POST">
+            <input autocomplete="off" type="search" name="searchTerm"
+                class="form-control mt-2 focus:outline-none bg-[url('/img/searchlogo.svg')] bg-no-repeat pl-6 bg-[length:20px]"
+                placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="Body">
+            <%- body -%>
+        </div>
+
+        <footer class="py-5 m-4 font-bold bottom-0">
+            <p>Build by Govind R</p>
+        </footer>
+
+    </div>
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
